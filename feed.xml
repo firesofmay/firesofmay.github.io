@@ -12,7 +12,7 @@ http://firesofmay.github.io/
 Firesofmay's Blog
 </description>
 <lastBuildDate>
-Tue, 25 Aug 2015 02:52:01 +0530
+Tue, 25 Aug 2015 02:53:13 +0530
 </lastBuildDate>
 <generator>
 clj-rss
@@ -87,7 +87,7 @@ Manipulating vector of maps - Clojure
 &amp;#40;{:name &amp;quot;Frank&amp;quot;, :age 22, :school &amp;quot;ABC&amp;quot;}
  {:name &amp;quot;Shawn&amp;quot;, :age 24, :school &amp;quot;-&amp;quot;}
  {:name &amp;quot;Eliot&amp;quot;, :age 12, :school &amp;quot;XYZ&amp;quot;}&amp;#41;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Notice age has been incremented, and if school is empty it is returning a &quot;-&quot; This took me sometime to grasp but somehow I just got it. So thought i'll share it down.&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Notice age has been incremented, and if school is empty it is returning a &lt;code&gt;-&lt;/code&gt;&lt;/p&gt;
 </description>
 <pubDate>
 Sat, 15 Dec 2012 00:00:00 +0530
