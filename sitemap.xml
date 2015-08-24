@@ -2,7 +2,7 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
 <url>
 <loc>
-http://firesofmay.github.io404.html
+http://firesofmay.github.io/404.html
 </loc>
 <lastmod>
 2015-08-24
@@ -10,7 +10,7 @@ http://firesofmay.github.io404.html
 </url>
 <url>
 <loc>
-http://firesofmay.github.ioarchives.html
+http://firesofmay.github.io/archives.html
 </loc>
 <lastmod>
 2015-08-24
@@ -18,7 +18,7 @@ http://firesofmay.github.ioarchives.html
 </url>
 <url>
 <loc>
-http://firesofmay.github.ioindex.html
+http://firesofmay.github.io/index.html
 </loc>
 <lastmod>
 2015-08-24
@@ -26,7 +26,7 @@ http://firesofmay.github.ioindex.html
 </url>
 <url>
 <loc>
-http://firesofmay.github.iopages/about.html
+http://firesofmay.github.io/pages/about.html
 </loc>
 <lastmod>
 2015-08-24
@@ -34,7 +34,7 @@ http://firesofmay.github.iopages/about.html
 </url>
 <url>
 <loc>
-http://firesofmay.github.iopages/another-page.html
+http://firesofmay.github.io/pages/another-page.html
 </loc>
 <lastmod>
 2015-08-24
@@ -42,7 +42,7 @@ http://firesofmay.github.iopages/another-page.html
 </url>
 <url>
 <loc>
-http://firesofmay.github.ioposts/2014-03-10-first-post.html
+http://firesofmay.github.io/posts/2014-03-10-first-post.html
 </loc>
 <lastmod>
 2015-08-24
@@ -50,7 +50,7 @@ http://firesofmay.github.ioposts/2014-03-10-first-post.html
 </url>
 <url>
 <loc>
-http://firesofmay.github.ioposts/2014-11-04-second-post.html
+http://firesofmay.github.io/posts/2014-11-04-second-post.html
 </loc>
 <lastmod>
 2015-08-24
@@ -58,7 +58,7 @@ http://firesofmay.github.ioposts/2014-11-04-second-post.html
 </url>
 <url>
 <loc>
-http://firesofmay.github.ioposts/2014-12-11-docs.html
+http://firesofmay.github.io/posts/2014-12-11-docs.html
 </loc>
 <lastmod>
 2015-08-24
@@ -66,7 +66,7 @@ http://firesofmay.github.ioposts/2014-12-11-docs.html
 </url>
 <url>
 <loc>
-http://firesofmay.github.iotags/cryogen.html
+http://firesofmay.github.io/tags/cryogen.html
 </loc>
 <lastmod>
 2015-08-24
@@ -74,7 +74,7 @@ http://firesofmay.github.iotags/cryogen.html
 </url>
 <url>
 <loc>
-http://firesofmay.github.iotags/not fetch.html
+http://firesofmay.github.io/tags/not fetch.html
 </loc>
 <lastmod>
 2015-08-24
@@ -82,7 +82,7 @@ http://firesofmay.github.iotags/not fetch.html
 </url>
 <url>
 <loc>
-http://firesofmay.github.iotags/very fetch.html
+http://firesofmay.github.io/tags/very fetch.html
 </loc>
 <lastmod>
 2015-08-24
@@ -90,7 +90,7 @@ http://firesofmay.github.iotags/very fetch.html
 </url>
 <url>
 <loc>
-http://firesofmay.github.iotags.html
+http://firesofmay.github.io/tags.html
 </loc>
 <lastmod>
 2015-08-24
