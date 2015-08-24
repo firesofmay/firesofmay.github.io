@@ -75,7 +75,9 @@ $ git remote add origin git@github.com:&lt;YOUR-USERNAME&gt;/&lt;YOUR-USERNAME&g
 $ git push -u origin master
 </code></pre><ul><li>And now check <code>YOUR-USERNAME.github.io</code>, you should see your blog.</li><li>Check <a href='http://cryogenweb.org/docs/writing-posts.html'>this</a> for how to write posts.</li><li>Then check <code>localhost:3000</code> to make sure it all looks good.</li><li>To push new changes simply run the following (from <code>my-blog</code> directory)</li></ul><pre><code class="bash">$ git add . &amp;&amp; git commit -am &quot;WIP&quot; &amp;&amp; git push
 $ cd resources/public &amp;&amp;  git add . &amp;&amp; git commit -am &quot;WIP&quot; &amp;&amp; git push &amp;&amp; cd ../../
-</code></pre><h3><a name="automate&#95;the&#95;deployment"></a>Automate the deployment</h3><ul><li>You can make that as a command as well.</li><li>Create the following snippet as a command deploy.sh</li></ul><pre><code class="bash">echo &quot;Deploying blog post&quot;
+</code></pre><h3><a name="automate&#95;the&#95;deployment"></a>Automate the deployment</h3><ul><li>You can make that as a command as well.</li><li>Create the following snippet as a command deploy.sh</li></ul><pre><code class="bash">#!/bin/sh
+
+echo &quot;Deploying blog post&quot;
 git add .
 git commit -am &quot;WIP&quot;
 git push

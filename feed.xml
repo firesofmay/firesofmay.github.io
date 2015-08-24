@@ -12,7 +12,7 @@ http://firesofmay.github.io/
 Firesofmay's Blog
 </description>
 <lastBuildDate>
-Tue, 25 Aug 2015 02:45:23 +0530
+Tue, 25 Aug 2015 02:49:48 +0530
 </lastBuildDate>
 <generator>
 clj-rss
@@ -43,7 +43,9 @@ $ git remote add origin git@github.com:&amp;lt;YOUR-USERNAME&amp;gt;/&amp;lt;YOU
 $ git push -u origin master
 &lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;&lt;li&gt;And now check &lt;code&gt;YOUR-USERNAME.github.io&lt;/code&gt;, you should see your blog.&lt;/li&gt;&lt;li&gt;Check &lt;a href='http://cryogenweb.org/docs/writing-posts.html'&gt;this&lt;/a&gt; for how to write posts.&lt;/li&gt;&lt;li&gt;Then check &lt;code&gt;localhost:3000&lt;/code&gt; to make sure it all looks good.&lt;/li&gt;&lt;li&gt;To push new changes simply run the following (from &lt;code&gt;my-blog&lt;/code&gt; directory)&lt;/li&gt;&lt;/ul&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;$ git add . &amp;amp;&amp;amp; git commit -am &amp;quot;WIP&amp;quot; &amp;amp;&amp;amp; git push
 $ cd resources/public &amp;amp;&amp;amp;  git add . &amp;amp;&amp;amp; git commit -am &amp;quot;WIP&amp;quot; &amp;amp;&amp;amp; git push &amp;amp;&amp;amp; cd ../../
-&lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;&lt;a name=&quot;automate&amp;#95;the&amp;#95;deployment&quot;&gt;&lt;/a&gt;Automate the deployment&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;You can make that as a command as well.&lt;/li&gt;&lt;li&gt;Create the following snippet as a command deploy.sh&lt;/li&gt;&lt;/ul&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;echo &amp;quot;Deploying blog post&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;&lt;a name=&quot;automate&amp;#95;the&amp;#95;deployment&quot;&gt;&lt;/a&gt;Automate the deployment&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;You can make that as a command as well.&lt;/li&gt;&lt;li&gt;Create the following snippet as a command deploy.sh&lt;/li&gt;&lt;/ul&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;#!/bin/sh
+
+echo &amp;quot;Deploying blog post&amp;quot;
 git add .
 git commit -am &amp;quot;WIP&amp;quot;
 git push
