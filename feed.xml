@@ -12,7 +12,7 @@ http://firesofmay.github.io/
 Firesofmay's Blog
 </description>
 <lastBuildDate>
-Tue, 25 Aug 2015 01:55:37 +0530
+Tue, 25 Aug 2015 02:34:16 +0530
 </lastBuildDate>
 <generator>
 clj-rss
@@ -43,15 +43,15 @@ $ git remote add origin git@github.com:&amp;lt;YOUR-USERNAME&amp;gt;/&amp;lt;YOU
 $ git push -u origin master
 &lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;&lt;li&gt;And now check &lt;code&gt;YOUR-USERNAME.github.io&lt;/code&gt;, you should see your blog.&lt;/li&gt;&lt;li&gt;Check &lt;a href='http://cryogenweb.org/docs/writing-posts.html'&gt;this&lt;/a&gt; for how to write posts.&lt;/li&gt;&lt;li&gt;Then check &lt;code&gt;localhost:3000&lt;/code&gt; to make sure it all looks good.&lt;/li&gt;&lt;li&gt;To push new changes simply run the following (from &lt;code&gt;my-blog&lt;/code&gt; directory)&lt;/li&gt;&lt;/ul&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;$ git add . &amp;amp;&amp;amp; git commit -am &amp;quot;WIP&amp;quot; &amp;amp;&amp;amp; git push
 $ cd resources/public &amp;amp;&amp;amp;  git add . &amp;amp;&amp;amp; git commit -am &amp;quot;WIP&amp;quot; &amp;amp;&amp;amp; git push &amp;amp;&amp;amp; cd ../../
-&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;&lt;li&gt;You can make that as a command as well.&lt;/li&gt;&lt;li&gt;Create the following snippet as a command deploy.sh&lt;/li&gt;&lt;/ul&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;#!/bin/sh
-
-echo &amp;quot;Deploying blog post&amp;quot;
-git add . &amp;amp;&amp;amp; git commit -am &amp;quot;WIP&amp;quot; &amp;amp;&amp;amp; git push;
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;&lt;li&gt;You can make that as a command as well.&lt;/li&gt;&lt;li&gt;Create the following snippet as a command deploy.sh&lt;/li&gt;&lt;/ul&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;echo &amp;quot;Deploying blog post&amp;quot;
+git add .
+git commit -am &amp;quot;WIP&amp;quot;
+git push
 cd resources/public &amp;amp;&amp;amp;  git add . &amp;amp;&amp;amp; git commit -am &amp;quot;WIP&amp;quot; &amp;amp;&amp;amp; git push &amp;amp;&amp;amp; cd ../../
-open http://&amp;lt;YOUR-USERNAME&amp;gt;.github.io
+open http://firesofmay.github.io
 &lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;&lt;li&gt;Make it executable&lt;/li&gt;&lt;/ul&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;$ chmod +x deploy.sh
 &lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;&lt;li&gt;Make changes and deploy!&lt;/li&gt;&lt;/ul&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;$ ./deploy.sh
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Thanks to &lt;a href='https://github.com/tangrammer/cryogen-blog/blob/master/resources/templates/README.md#instructions-to-make-changes'&gt;tangrammer's instructions here&lt;/a&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Thanks to &lt;a href='https://github.com/tangrammer/cryogen-blog/blob/master/resources/templates/README.md#instructions-to-make-changes'&gt;tangrammer's instructions here&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Reference:&lt;ul&gt;&lt;li&gt;To setup custom domain name with namecheap check &lt;a href='http://davidensinger.com/2013/03/setting-the-dns-for-github-pages-on-namecheap/'&gt;this&lt;/a&gt; link&lt;/li&gt;&lt;/ul&gt;
 </description>
 <pubDate>
 Wed, 26 Aug 2015 00:00:00 +0530

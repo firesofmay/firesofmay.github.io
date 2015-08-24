@@ -75,15 +75,15 @@ $ git remote add origin git@github.com:&lt;YOUR-USERNAME&gt;/&lt;YOUR-USERNAME&g
 $ git push -u origin master
 </code></pre><ul><li>And now check <code>YOUR-USERNAME.github.io</code>, you should see your blog.</li><li>Check <a href='http://cryogenweb.org/docs/writing-posts.html'>this</a> for how to write posts.</li><li>Then check <code>localhost:3000</code> to make sure it all looks good.</li><li>To push new changes simply run the following (from <code>my-blog</code> directory)</li></ul><pre><code class="bash">$ git add . &amp;&amp; git commit -am &quot;WIP&quot; &amp;&amp; git push
 $ cd resources/public &amp;&amp;  git add . &amp;&amp; git commit -am &quot;WIP&quot; &amp;&amp; git push &amp;&amp; cd ../../
-</code></pre><ul><li>You can make that as a command as well.</li><li>Create the following snippet as a command deploy.sh</li></ul><pre><code class="bash">#!/bin/sh
-
-echo &quot;Deploying blog post&quot;
-git add . &amp;&amp; git commit -am &quot;WIP&quot; &amp;&amp; git push;
+</code></pre><ul><li>You can make that as a command as well.</li><li>Create the following snippet as a command deploy.sh</li></ul><pre><code class="bash">echo &quot;Deploying blog post&quot;
+git add .
+git commit -am &quot;WIP&quot;
+git push
 cd resources/public &amp;&amp;  git add . &amp;&amp; git commit -am &quot;WIP&quot; &amp;&amp; git push &amp;&amp; cd ../../
-open http://&lt;YOUR-USERNAME&gt;.github.io
+open http://firesofmay.github.io
 </code></pre><ul><li>Make it executable</li></ul><pre><code class="bash">$ chmod +x deploy.sh
 </code></pre><ul><li>Make changes and deploy!</li></ul><pre><code class="bash">$ ./deploy.sh
-</code></pre><p>Thanks to <a href='https://github.com/tangrammer/cryogen-blog/blob/master/resources/templates/README.md#instructions-to-make-changes'>tangrammer's instructions here</a></p>
+</code></pre><p>Thanks to <a href='https://github.com/tangrammer/cryogen-blog/blob/master/resources/templates/README.md#instructions-to-make-changes'>tangrammer's instructions here</a></p><p>Reference:<ul><li>To setup custom domain name with namecheap check <a href='http://davidensinger.com/2013/03/setting-the-dns-for-github-pages-on-namecheap/'>this</a> link</li></ul>
 </div>
 
 <div id="post-tags">
