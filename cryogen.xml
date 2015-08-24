@@ -12,10 +12,42 @@ http://firesofmay.github.io/
 Firesofmay's Blog
 </description>
 <lastBuildDate>
-Tue, 25 Aug 2015 00:01:16 +0530
+Tue, 25 Aug 2015 01:08:16 +0530
 </lastBuildDate>
 <generator>
 clj-rss
 </generator>
+<item>
+<guid>
+http://firesofmay.github.io/posts/2015-08-26-how-to-setup-cyrogen.html
+</guid>
+<link>
+http://firesofmay.github.io/posts/2015-08-26-how-to-setup-cyrogen.html
+</link>
+<title>
+How to setup your own blog on Github using Cryogen
+</title>
+<description>
+&lt;p&gt;For quite sometime I have been looking for a nice way to setup my blog. I have looked at various options but wasn't happy with any of those.&lt;/p&gt;&lt;p&gt;My main criteria was:&lt;ul&gt;&lt;li&gt;I should be able to edit it within emacs.&lt;/li&gt;&lt;li&gt;It should be markdown based so I don't face weird editor issues.&lt;/li&gt;&lt;li&gt;Code highlighting should work for Clojure.&lt;/li&gt;&lt;li&gt;It should work on mobile/desktop nicely.&lt;/li&gt;&lt;li&gt;Tags should be available.&lt;/li&gt;&lt;li&gt;RSS feeds should work.&lt;/li&gt;&lt;li&gt;Preferably free and scales well.&lt;/li&gt;&lt;li&gt;Have some control on the setup but it should just work.&lt;/li&gt;&lt;li&gt;Should have an option to add comments.&lt;h2&gt;&lt;/li&gt;&lt;li&gt;It would be awesome if I can hack it if I need to.&lt;/h2&gt;&lt;/li&gt;&lt;/ul&gt;And I think finally &lt;a href='http://cryogenweb.org/'&gt;cryogen&lt;/a&gt;/github/emacs has nailed it for me.&lt;/p&gt;&lt;p&gt;Even though the documentation is fairly good, I wasn't clear how to setup blog and repo together. I'll just assume you want to setup it as &lt;a href='username.github.io'&gt;username.github.io&lt;/a&gt;.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Go to github and create one repo called cryogen-blog.&lt;/li&gt;&lt;li&gt;Open up commandline, switch to your projects directory and run the following:&lt;pre&gt;&lt;code class=&quot;shell&quot;&gt;$ lein new cryogen my-blog
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;&lt;li&gt;Run the server so that it compiles any new changes&lt;pre&gt;&lt;code&gt;$ lein ring server
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;&lt;li&gt;Open another terminal&lt;/li&gt;&lt;li&gt;Switch to my-blog&lt;pre&gt;&lt;code class=&quot;shell&quot;&gt;$ cd my-blog
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;&lt;li&gt;Open resources/templates/config.edn and update the following values&lt;ul&gt;&lt;li&gt;:site-url &lt;code&gt;&amp;quot;http://username.github.io/&amp;quot;&lt;/code&gt;&lt;/li&gt;&lt;li&gt;:blog-prefix &lt;code&gt;&amp;quot;&amp;quot;&lt;/code&gt;&lt;/li&gt;&lt;li&gt;:site-title &lt;code&gt;&amp;quot;your site title&amp;quot;&lt;/code&gt;&lt;/li&gt;&lt;li&gt;:author &lt;code&gt;&amp;quot;@twitterhandle&amp;quot;&lt;/code&gt;&lt;/li&gt;&lt;li&gt;:description &lt;code&gt;&amp;quot;your description&amp;quot;&lt;/code&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;Make sure .gitignore has &lt;code&gt;/resources/public/&lt;/code&gt; in it.&lt;/li&gt;&lt;li&gt;Initialize your cryogen-blog by running the following in my-blog directory&lt;pre&gt;&lt;code class=&quot;shell&quot;&gt;$ git init
+$ git commit -m &amp;quot;first commit&amp;quot;
+$ git remote add origin git@github.com:&amp;lt;YOUR-USERNAME&amp;gt;/cryogen-blog.git
+$ git push -u origin master
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;&lt;li&gt;But this will only push a new repo, this does not create any blog.&lt;/li&gt;&lt;li&gt;To create the blog, create another repo with same name as your username, i.e. &lt;code&gt;username.github.io&lt;/code&gt;&lt;/li&gt;&lt;li&gt;Run&lt;pre&gt;&lt;code&gt;$ cd my-blog/resources/public
+$ git init
+$ git add README.md
+$ git commit -m &amp;quot;first commit&amp;quot;
+$ git remote add origin git@github.com:&amp;lt;YOUR-USERNAME&amp;gt;/&amp;lt;YOUR-USERNAME&amp;gt;.github.io.git
+$ git push -u origin master
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;&lt;li&gt;And now check &lt;code&gt;YOUR-USERNAME.github.io&lt;/code&gt;, you should see your blog.&lt;/li&gt;&lt;li&gt;Check &lt;a href='http://cryogenweb.org/docs/writing-posts.html'&gt;this&lt;/a&gt; for how to write posts.&lt;/li&gt;&lt;li&gt;Then check &lt;code&gt;localhost:3000&lt;/code&gt; to make sure it all looks good.&lt;/li&gt;&lt;li&gt;To push new changes simply run the following (from my-blog directory)&lt;pre&gt;&lt;code&gt;$ git add . &amp;amp;&amp;amp; git commit -am &amp;quot;WIP&amp;quot; &amp;amp;&amp;amp; git push
+$ cd resources/public &amp;amp;&amp;amp;  git add . &amp;amp;&amp;amp; git commit -am &amp;quot;WIP&amp;quot; &amp;amp;&amp;amp; git push &amp;amp;&amp;amp; cd ../../
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;&lt;li&gt;You can make that as a command as well.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Thanks to &lt;a href='https://github.com/tangrammer/cryogen-blog/blob/master/resources/templates/README.md#instructions-to-make-changes'&gt;tangrammer's instructions here&lt;/a&gt;&lt;/p&gt;
+</description>
+<pubDate>
+Wed, 26 Aug 2015 00:00:00 +0530
+</pubDate>
+</item>
 </channel>
 </rss>
