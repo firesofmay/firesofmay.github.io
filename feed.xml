@@ -12,17 +12,17 @@ http://firesofmay.github.io/
 Firesofmay's Blog
 </description>
 <lastBuildDate>
-Sun, 29 May 2016 16:53:07 +0530
+Sun, 29 May 2016 16:59:11 +0530
 </lastBuildDate>
 <generator>
 clj-rss
 </generator>
 <item>
 <guid>
-http://firesofmay.github.io/posts/2015-08-28-sed-and-awk.html
+http://firesofmay.github.io/posts/2016-05-29-sed-and-awk.html
 </guid>
 <link>
-http://firesofmay.github.io/posts/2015-08-28-sed-and-awk.html
+http://firesofmay.github.io/posts/2016-05-29-sed-and-awk.html
 </link>
 <title>
 Using linux utilities in a real world usecase
@@ -132,7 +132,7 @@ e9f5bda6:access55
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;PS: &lt;code&gt;head&lt;/code&gt; command is for you to see the short version of the output, not required though&lt;/p&gt;&lt;p&gt;What is going on? Thats for you to figure it out.&lt;/p&gt;&lt;p&gt;Have Fun! :D&lt;/p&gt;
 </description>
 <pubDate>
-Fri, 28 Aug 2015 00:00:00 +0530
+Sun, 29 May 2016 00:00:00 +0530
 </pubDate>
 </item>
 <item>
