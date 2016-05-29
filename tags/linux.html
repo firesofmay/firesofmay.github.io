@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
     <meta charset="utf-8"/>
-    <title>firesofmay: Manipulating vector of maps - Clojure</title>
+    <title>firesofmay: Posts Tagged &quot;linux&quot;</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='http://fonts.googleapis.com/css?family=Alegreya:400italic,700italic,400,700' rel='stylesheet'
           type='text/css'>
@@ -50,65 +50,17 @@
         <div class="col-lg-9">
             <div id="content">
                 
-<div id="post">
-    <div class="post-header">
-    <div id="post-meta" class="row">
-        <div class="col-lg-6">December 15, 2012</div>
-        
+<div id="posts-by-tag">
+    <div id="page-header">
+        <h2>Posts Tagged &quot;linux&quot;</h2>
     </div>
-    <h2>Manipulating vector of maps - Clojure</h2>
-</div>
-<div>
+    <ul>
     
-    <p>So here is a vector of maps. Map contains name, age and school as keys. <em>Note</em> that school is an optional key.</p><pre><code class="clojure">&#40;def student-grades &#91;{:age 21, :name &quot;Frank&quot;, :school &quot;ABC&quot;}
-                     {:age 23, :name &quot;Shawn&quot;}
-                     {:age 11, :name &quot;Eliot&quot;, :school &quot;XYZ&quot;}&#93;&#41;
-</code></pre><p>Now I would like to take that vector of maps and return the same name, increment the age and if school key is missing return <code>-</code> as its value else return the school itself. So I write a function which take one map like that and de-structure its keys.</p><pre><code class="clojure">&#40;defn get-grades
-  &quot;This will take a map of name age school as keys and
-   return a map of name, incremented age and
-   if school is not given then '-'
-   else the name of the school itself.&quot;
-  &#91;{:keys &#91;name age school&#93;}&#93;
-  {:name name
-   :age &#40;inc age&#41;
-   :school &#40;or school &quot;-&quot;&#41;}&#41;
-</code></pre><p>And now all I have to do is map that function onto that whole vector of maps and we get</p><pre><code class="clojure">&#40;map get-grades
-     student-grades&#41;
-&#40;{:name &quot;Frank&quot;, :age 22, :school &quot;ABC&quot;}
- {:name &quot;Shawn&quot;, :age 24, :school &quot;-&quot;}
- {:name &quot;Eliot&quot;, :age 12, :school &quot;XYZ&quot;}&#41;
-</code></pre><p>Notice age has been incremented, and if school is empty it is returning a <code>-</code></p>
-</div>
-
-<div id="post-tags">
-    <b>Tags: </b>
+        <li>
+            <a href="/posts/2015-08-28-sed-and-awk.html">Using linux utilities in a real world usecase</a>
+        </li>
     
-    <a href="/tags/clojure.html">clojure</a>
-    
-</div>
-
-
-    <div id="prev-next">
-        
-        <a href="/posts/2015-08-26-setup-cryogen.html">&laquo; How to setup your own blog on Github using Cryogen</a>
-        
-        
-        <a class="right" href="/posts/2012-08-27-intro-to-kafka.html">Intro to kafka &raquo;</a>
-        
-    </div>
-
-    
-    <div id="disqus_thread"></div>
-    <script type="text/javascript">
-        (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = '//firesofmay.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-    </script>
-    
-
-
+    </ul>
 </div>
 
             </div>

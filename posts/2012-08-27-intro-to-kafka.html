@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>firesofmay: Intro to kafka</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='http://fonts.googleapis.com/css?family=Alegreya:400italic,700italic,400,700' rel='stylesheet'
+          type='text/css'>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/default.min.css">
+    <link href="../css/screen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/index.html">firesofmay</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li ><a href="/index.html">Home</a></li>
+                <li
+                ><a href="/archives.html">Archives</a></li>
+                
+                <li
+                >
+                <a href="/pages/about.html">About</a>
+                </li>
+                
+                <li><a href="/feed.xml">RSS</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div><!--/.container-fluid -->
+</nav>
+
+
+<div class="container">
+
+
+    <div class="row">
+        <div class="col-lg-9">
+            <div id="content">
+                
+<div id="post">
+    <div class="post-header">
+    <div id="post-meta" class="row">
+        <div class="col-lg-6">August 27, 2012</div>
+        
+    </div>
+    <h2>Intro to kafka</h2>
+</div>
+<div>
+    
+    <h3><a name="what&#95;is&#95;kafka?"></a>What is Kafka?</h3>Kafka provides a fast, distributed, highly scalable, highly available, publish-subscribe messaging system. It solves communicatin and integration between components of large software systems.<p>Distributed Messaging System (Other messaging systems are RabbitMQ, ActiveMQ etc)</p><p>By distributed we mean it'll scale out, it'll work on multiple servers.</p><p>Getting data from one system to another is a challenging problem It can easily become a mess one everything is trying to talk directly to everything else. You need someone to coordinate that flow of data across systems.</p><p>Kakfa solves just that problem. Having Producers write data to Kafka, and Having Consumers read data from Kafka.</p><h3><a name="unique&#95;about&#95;kafka?"></a>Unique about Kafka?</h3><ul><li>Large number of Consumers</li><li>* Scales really well with really large number of consumers.</li><li>Ad-hoc consumers</li><li>* Kafka doesn't need to know you need data from Kafka.</li><li>* Not a performance issue.</li><li>Batch consumers</li><li>* Can have a consumer waking up say every hour, getting that hours worth of data and processing that.</li><li>* This was a performance issue before Kafka.</li><li>* Great for batch systems like Hadoop.</li><li>Automatic recovery from broker failures.</li><li>* If one of the brokers go down, data is not lost.</li><li>* There maybe tiny delay in that scenario though.</li></ul><h3><a name="what&#95;do&#95;we&#95;do&#95;with&#95;kafka?"></a>What do we do with Kafka?</h3><ul><li>Messaging - Communication between apps</li><li>* Using to it to notify one to another.</li><li>Website Activity Tracking (Clicks, Searches)</li><li>* A small kafka cluster can support large number of events per second.</li><li>Metrics collection - instead of writing to logs</li><li>* If we would like to store and analyze different kinds of data about machines, cpu memory, collect data and keep it in kafka, and other systems can analyze it.</li><li>Audit</li><li>Source & target of Stream Processing.</li></ul><h3><a name="what&#95;kafka&#95;doesn't&#95;do?"></a>What Kafka Doesn't do?</h3><ul><li>It's not and end-user solution. You need to write code to use it.</li><li>* Non developer cannot use this. Not an equivalent of log stash for example.</li><li>Not a drop-in JMS (Java Messaging Service) replacement.</li><li>* Example cannot just replace ActiveMQs with Kafka as it has different APIs/Semantics	.</li><li>It doesn't have many ready-made producers/consumers.</li><li>No data transformations.</li><li>No encryption/auth/authentication (yet).	</li></ul><h3><a name="misc"></a>Misc</h3><ul><li>Kafka is written in Scala and runs on the JVM.</li><li>Can store many TB of messages</li><li>Messages live for a certain time.</li></ul><h3><a name="kafka&#95;has"></a>Kafka has</h3><ul><li>Groups</li><li>Partitions</li></ul><p>In Kafka a server is called a broker</p><p>Producers sends the message to broker to a given topic Consumers connects to broker and tell them what topic they want to listen to and what group they belong to.</p><p>Each Producer/Broker/Consumer are easy to add/remove from to the system. And every other component gets notified accordingly.</p><p>To coordinate among each other Kafka uses Zookeeper. Say when a new broker is started up, it'll write its presence to Zookeeper, so that both producers and subscribers will get call backs that new broker is available. Similarly when broker goed down. Similarly for producers/consumers.</p><h3><a name="why&#95;is&#95;kafka&#95;fast?"></a>Why is Kafka Fast?</h3><ul><li>No message committing. In other similar systems, consumer has to commit that it has received the message, In Kafka thats not the case.</li><li>When broker recieves the message from producer, all it does is appends it to a log file.</li><li>No state on Broker. Broker does not store which user were getting which messages. Hence makes it fast</li><li>Kafka appends file upstream (Producer) & writes file downstream (Consumer).</li><li>Offset is the King.</li></ul><h3><a name="kafka&#95;basics"></a>Kafka Basics</h3><ul><li>Messages are organized into <strong>topics</strong></li><li>* When you send a message you send to a topic</li><li>* When you are reading a message you need to say what topic to read from.</li><li>* When you design your system you need to design it around differnt topics of interest for different consumers.</li><li><strong>Producers</strong> push messages</li><li><strong>Consumers</strong> pull messages</li><li>* Consumers subscribe to topic and they get the messages.</li><li>Kafka runs in a cluster. Nodes are called <strong>brokers</strong>.</li><li>A single topic can have multiple partitions.</li><li>* Some topics can have lot of data so you want to partition it across multiple machines. And then you can put each partition on a seperate machine.</li><li>* Multiple Consumers can also be configured to read from a particular topic and each of those consumers can read from a particular partition. Helps in high throughput.</li><li>* Inside each partition you'll see ids. Those ids are called offset.</li><li>* When consumer consumes messages you say I want to consume messages from this offset.</li><li>* Say you a consumer broke connection, you reconnect and say what offset you want to continue from. That way messages are not lost and at the same time brokers don't have to maintain any kind of state making them super fast.</li><li>* Producer partitions data and adds it in partitions, hence order is maintained withing a partition.</li><li>* Order of messages are maintained only withing a partition, not across partitions.</li><li>* A specific message is uniquely identified by topic+partition+offset</li><li>* Partition is a log</li><li>* You write to it sequentially.</li><li>* Multiple consumers can read from multiple points of the log.</li><li>* Data is stored for a certain amount of time say a week.</li><li>* If a consumer hasn't read that data withing that period that data is lost else it can catch up within that given time.</li></ul>	<p>CONTINUE FROM VIDEO 2 AT 3mins 	</p><p>References:</p><ul><li><a href='https://vimeo.com/62298867'>Apache Kafka - distributed publish-subscribe messaging system - Morten Kjetland</a></li><li><a href='http://shop.oreilly.com/product/0636920038603.do'>Introduction to Apache Kafka (Paid)</a></li><li>Kafka Slides - http://web.stanford.edu/class/ee380/Abstracts/141112-slides.pdf</li><li>http://kafka.apache.org/08/design.html</li><li>https://www.hakkalabs.co/articles/apache-kafka-top-12-tutorials-on-performance-more</li><li>http://www.happiestminds.com/sites/default/files/article/ANALYTICS<i>ON</i>BIG<i>FAST</i>DATA<i>USING</i>A<i>REALTIME</i>STREAM<i>DATA</i>PROCESSING_ARCHITECTURE.pdf</li><li>http://www.quora.com/Whats-the-best-way-to-start-learning-Kafka</li></ul>
+</div>
+
+<div id="post-tags">
+    <b>Tags: </b>
+    
+    <a href="/tags/kafka.html">kafka</a>
+    
+</div>
+
+
+    <div id="prev-next">
+        
+        <a href="/posts/2012-12-15-vector-of-maps.html">&laquo; Manipulating vector of maps - Clojure</a>
+        
+        
+    </div>
+
+    
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//firesofmay.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    
+
+
+</div>
+
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div id="sidebar">
+                <h3>Links</h3>
+                <ul id="links">
+                    <li><a href="http://github.com/firesofmay">My Github</a></li>
+                    <li><a href="https://twitter.com/firesofmay">@firesofmay</a></li>
+                    
+                </ul>
+                
+                <div id="recent">
+                    <h3>Recent Posts</h3>
+                    <ul>
+                        
+                        <li><a href="/posts/2015-08-28-sed-and-awk.html">Using linux utilities in a real world usecase</a></li>
+                        
+                        <li><a href="/posts/2015-08-26-setup-cryogen.html">How to setup your own blog on Github using Cryogen</a></li>
+                        
+                        <li><a href="/posts/2012-12-15-vector-of-maps.html">Manipulating vector of maps - Clojure</a></li>
+                        
+                    </ul>
+                </div>
+                
+                
+                <div id="tags">
+                    <h3>Tags</h3>
+                    <ul>
+                        
+                        <li><a href="/tags/grep.html">grep</a></li>
+                        
+                        <li><a href="/tags/linux.html">linux</a></li>
+                        
+                        <li><a href="/tags/head.html">head</a></li>
+                        
+                        <li><a href="/tags/sed.html">sed</a></li>
+                        
+                        <li><a href="/tags/awk.html">awk</a></li>
+                        
+                        <li><a href="/tags/cut.html">cut</a></li>
+                        
+                        <li><a href="/tags/github.html">github</a></li>
+                        
+                        <li><a href="/tags/clojure.html">clojure</a></li>
+                        
+                        <li><a href="/tags/kafka.html">kafka</a></li>
+                        
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <footer>Copyright &copy; 2015 @firesofmay
+        <p style="text-align: center;">Powered by <a href="http://cryogenweb.org">Cryogen</a></p></footer>
+</div>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="../js/highlight.pack.js" type="text/javascript"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
